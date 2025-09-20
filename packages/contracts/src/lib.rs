@@ -7,3 +7,4 @@ mod hub;
 
 pub use crate::soulbound::*;
 pub use crate::hub::*;
+mod deployer;
