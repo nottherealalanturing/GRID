@@ -24,3 +24,16 @@ impl NeighborhoodHub {
         // Post logic here
     }
 }
+
+// Extending functionality for Polling
+impl NeighborhoodHub {
+    pub fn create_poll(env: Env, creator: Address, question: String) {
+        creator.require_auth();
+        // Poll creation logic
+    }
+    
+    pub fn vote(env: Env, voter: Address, poll_id: u32, option: u32) {
+        voter.require_auth();
+        // Voting logic
+    }
+}
