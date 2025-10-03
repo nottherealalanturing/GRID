@@ -37,3 +37,21 @@ impl NeighborhoodHub {
         // Voting logic
     }
 }
+
+// Crypto verification
+impl NeighborhoodHub {
+    pub fn post_anon(env: Env, signature: [u8; 64], public_key: [u8; 32], msg: String) {
+        // In Soroban, we typically use the env.crypto().ed25519_verify
+        // This simulates the 'Verify Signature' logic from your screenshot
+        let verified = env.crypto().ed25519_verify(
+            &public_key.into(), 
+            &msg.clone().into_bytes(&env), 
+            &signature.into()
+        );
+        
+        if !verified {
+            panic!("Invalid signature");
+        }
+        // Proceed with anonymous post
+    }
+}
